@@ -14,6 +14,12 @@ public class PersonaService {
     public List<Persona> obtenerPersonas() {
         return personas;
     }
+    public List<String> obtenerCedulas() {
+        return this.personas
+                .stream()
+                .map(Persona::getCedula)
+                .collect(Collectors.toList());
+    }
 
     public Persona obtenerPersonaPorCedula(String cedula) {
         return this.personas
